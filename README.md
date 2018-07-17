@@ -4,10 +4,16 @@ execution of common HTML tags. Hope this helps people who have to often switch l
 styles of development. Keep rocking codes! ;)
 
 #### Validators 
-<!--complete from screenshot-->
+[W3C Validator](https://validator.w3.org/): The W3C validator checks the markup validity of various Web document formats, 
+such as HTML.  
+[CSS Validator](https://jigsaw.w3.org/css-validator/): The CSS validator checks Cascading Style Sheets (CSS) and (X)HTML 
+documents that use CSS stylesheets.
+[Unicorn](http://validator.w3.org/unicorn/): Unicorn is W3C's unified validator, which helps improve the quality of Web pages by performing a variety of 
+checks. It gathers the results of the popular HTML and CSS validators, as well as other useful services, such as 
+Internationalization, RSS/Atom feeds and http headers.
 
 #### What is W3C?
-<!--complete from screenshot-->
+W3C's mission is to safeguard the openness, accessibility, and freedom of the World Wide Web from a technical perspective.
 
 #### Few W3C Standards
 <p>Web accessibility means people with any disability or without any, both access web equally. Few things that support 
@@ -47,6 +53,25 @@ qualifies the element. **Comments** in HTML are written as follows:
 The first thing in a html page is: `<!DOCTYPE html>`. This indicates that this is a HTML5 file. The next tag will be 
 `<html>`. This is where the document resides. The `<head>` tag inside `<html>` stores information about the document. 
 `<body>` inside `<html>` stores the content of the document. `<p>` is used for paragraphs.
+Refer to *first_html_page.html*
+
+#### Character Encoding
+Each character is assigned a particular number called a **code point**. These code points are stored in computer memory 
+in the form of bytes. We say the character is encoded using one or more bytes. Character encoding is used as a reference 
+to map code points into bytes to store in computer memory. Examples of character encodings include:
+* ASCII: contains letters, characters and a limited set of symbols and punctuation for the English language
+* Windows-1252 (Latin1): Windows character set that supports 256 different code points
+* ISO-8859-6: contains letters and symbols based on the Arabic script
+* Unicode: contains characters for most living languages and scripts in the world
+
+Always use the Unicode character encoding UTF-8 for web page.
+`<meta>` tag is used to specify the character encoding. This tag is placed inside `<head>` tag. The meta declaration 
+should be within the first 1024 bytes of the page.
+```html
+<meta charset="utf-8"> <!--OR-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- first one preferred-->
+```
 
 <!--Unformatted-->
 Linking to elements on the same page or to other pages on the same site is called navigation. HTML has a special tag called <nav> that is used to wrap these links in order to organize the content on your web page.
