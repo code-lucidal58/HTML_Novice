@@ -43,17 +43,20 @@ documents. HTML's ancestor language is SGML (Standard Generalized Markup Languag
 angle brackets.
 
 #### Terms
-**Elements** are pieces of a webpage. **Tags** are used to represent an element. **Attributes** add meaning to tags and 
-qualifies the element. **Comments** in HTML are written as follows:
+**Elements** are pieces of a webpage. **Tags** are used to represent an element. They are case-insensitive. **Attributes** 
+add meaning to tags and qualifies the element. These are case-sensitive. **Comments** in HTML are written as follows:
 ```html
 <!-- this is a comment. Can be single line or multi line-->
 ```
 
 #### First HTML page
-The first thing in a html page is: `<!DOCTYPE html>`. This indicates that this is a HTML5 file. The next tag will be 
-`<html>`. This is where the document resides. The `<head>` tag inside `<html>` stores information about the document. 
-`<body>` inside `<html>` stores the content of the document. `<p>` is used for paragraphs.
-Refer to *first_html_page.html*
+The first thing in a html page is: `<!DOCTYPE html>`. This indicates that this is a HTML5 file. It is a document type 
+declaration. The next tag will be `<html></html>`. This is where the document resides. The `<head></head>` tag inside `<html>` stores 
+information about the document. `<body></body>` inside `<html>` stores the content of the document. `<p></p>` is used for paragraphs.
+`<q></<q>` is used for quotes. `<hr>` is for horizontal rule. Used for separate content types. `<blockquote></blockquote>` 
+is for quoting larger passage. `<br>` is for line break. `<ul></ul> <ol></ol>` These are for unordered and ordered lists 
+respectively. The list items are mentioned using `<li></li>`. `<pre></pre>` This is for preformatted text, mainly implies 
+monospaced font. All whitespaces and formatting are shown as it is written between these tags.
 
 #### Character Encoding
 Each character is assigned a particular number called a **code point**. These code points are stored in computer memory 
@@ -73,6 +76,34 @@ should be within the first 1024 bytes of the page.
 <!-- first one preferred-->
 ```
 
+#### HTML character references
+HTML reserves certain characters. All HTML character references can be written using either a name or number.
+
+| Symbol | Entity Name | Entity Number |
+|--------|-------------:|---------------:|
+|Less than '<'|\&lt; | \&#60; | 
+|Greater than '>'|\&gt;|\&#62;|
+|Ampersand '&'|\&amp;|\&#38;|
+|Quotes "|\&quot;|\&#34;|
+|Non-breaking space - space that will not create a new line|\&nbsp;|\&#160;|
+
+Entity name always starts with ampersand and ends with semi-colon. For a list of named character references available in 
+HTML, visit:  https://dev.w3.org/html5/html-author/charref. Any Unicode character can be represented using a numeric 
+character reference.
+
+#### Some useful attributes
+Attributes are name-value pair. The only exception is when it is of boolean type. If the attribute is mentioned, that 
+means it is set to true. If omitted, it is set to false. `<ol reversed>` This will show the list in reverse. Order of 
+attributes do not matter. There are two types of attributes:
+**Global attributes** can be applied to any and all tags. E.g. id, class, lang, title, etc.
+**Non Global attributes** are specific to a tag. E.g. src is specific to img and script.
+* `start` attribute to `ol` indicates the starting number. `<ol start="5">` This is start numbering the list from 5. 
+
+#### Semantics and Style
+`<b>` and `<strong>`, `<i>` and `<em>` seem no different in a regular Web browser but there is an important difference 
+between them. `<b>` and `<i>` are style tags, while `<em>` emphasises text and `<strong>` marks as important text. 
+Hence the later two tags are semantics tags. Earlier two tags have no semantic meaning. This was the seen in HTML4. 
+In HTML5, `lang` attribute was added to style tags to added semantic meaning.
 <!--Unformatted-->
 Linking to elements on the same page or to other pages on the same site is called navigation. HTML has a special tag called <nav> that is used to wrap these links in order to organize the content on your web page.
 
